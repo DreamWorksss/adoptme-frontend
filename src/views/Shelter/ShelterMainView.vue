@@ -37,7 +37,7 @@
   background: rgb(42, 157, 143);
   background: linear-gradient(
     0deg,
-    rgba(42, 157, 143, 0.7) 0%,
+    rgba(42, 157, 143, 0.4) 0%,
     rgba(42, 157, 143, 0) 100%
   );
 }
