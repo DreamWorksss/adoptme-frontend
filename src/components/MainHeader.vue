@@ -1,8 +1,10 @@
 <template>
-  <header class="elevation-10">
+  <header class="elevation-0">
     <div class="flex-fill mx-10">
       <div class="d-flex justify-space-between align-center" size="large">
-        <div class="text-h4">AdoptMe: {{ "More info" }}</div>
+        <img src="@/assets/logo.png" alt="AdoptMe Logo" class="logo">
+        <div class="text-h4">AdoptMe</div>
+        <div class="flex-fill"></div>
         <v-btn rounded flat color="#ffc974" text="Shelter"></v-btn>
       </div>
 
@@ -23,6 +25,13 @@ header {
     rgba(255, 255, 255, 0) 50%
   );
 }
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
 </style>
 
 <script></script>

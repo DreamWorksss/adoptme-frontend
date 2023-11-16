@@ -5,7 +5,6 @@
 <template>
     <MainHeader/>
     <router-view/>
- 
 </template>
 
 <style>
