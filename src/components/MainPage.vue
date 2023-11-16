@@ -13,10 +13,10 @@
   </div>
 
    <div class="button-container">
-      <v-btn rounded flat color="#ffc974" text="ADOPT" style="font-size: 20px; padding: 5px 30px;"></v-btn>
-      <v-btn rounded flat color="#ffc974" text="DONATE" style="font-size: 20px; padding: 5px 30px;"></v-btn>
-      <v-btn rounded flat color="#ffc974" text="VOLUNTEER" style="font-size: 20px; padding: 5px 30px;"></v-btn>
-    </div>
+    <v-btn rounded flat color="#ffc974" text="ADOPT" class="custom-btn"></v-btn>
+    <v-btn rounded flat color="#ffc974" text="DONATE" class="custom-btn"></v-btn>
+    <v-btn rounded flat color="#ffc974" text="VOLUNTEER" class="custom-btn"></v-btn>
+  </div>
 
     <div class="image-container">
       <img src="@/assets/dog1.jpg" alt="Dog 1" class="image">
@@ -46,14 +46,14 @@ export default {
 }
 
 .content {
-  max-width: 30cm;
+  max-width: 80%;
   padding: 2em 1em; 
   text-align: center;
   margin: 0 auto;
 }
 
 .paragraph {
-  font-size: 31px;
+  font-size: 1.9rem;
   font-weight: lighter;
   font-style: italic;
   line-height: 1.5;
@@ -63,18 +63,21 @@ export default {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 5%;
 }
 
-.v-btn {
-  margin: 0 70px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+.custom-btn {
+  font-size: 1.25rem;
+  padding: 5px 30px;
+  margin: 0 20px; /* Adjust margin as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Apply specific box-shadow */
 }
 
 .image-container {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 5%;
+  flex-wrap: wrap;
 }
 
 .image {
