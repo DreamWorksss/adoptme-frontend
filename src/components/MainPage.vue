@@ -42,7 +42,7 @@ export default {
     rgba(42, 157, 143, 0.75) 0%, 
     rgba(255, 255, 255, 0) 80%
   );
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .content {
@@ -68,9 +68,9 @@ export default {
 
 .custom-btn {
   font-size: 1.25rem;
-  padding: 5px 30px;
-  margin: 0 20px; /* Adjust margin as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Apply specific box-shadow */
+  padding: 0.3125rem 1.875rem;
+  margin: 0 1.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .image-container {
