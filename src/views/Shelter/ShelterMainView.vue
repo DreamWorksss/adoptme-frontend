@@ -1,5 +1,6 @@
 <script setup>
 import ShelterPetCard from "@/components/PetCards/ShelterPetCard.vue";
+import ShelterAddPet from "@/components/ShelterComponenets/ShelterAddPet.vue";
 
 import { ref } from "vue";
 
@@ -29,7 +30,9 @@ const shelterAnimals = ref([
           bg-color="rgba(255, 201, 116, 0.7)"
         ></v-text-field>
 
-        <v-btn flat height="auto" color="rgb(255, 201, 116, 0.6)">Add +</v-btn>
+        <ShelterAddPet>
+        </ShelterAddPet>
+        
       </div>
 
       <v-menu>
@@ -40,7 +43,8 @@ const shelterAnimals = ref([
             v-bind="props"
             height="auto"
           >
-            Filter &nbsp<font-awesome-icon
+            Filter &nbsp;
+            <font-awesome-icon
               :icon="['fas', 'arrow-down']"
               style="color: #5bb4a9"
             />
@@ -85,6 +89,7 @@ const shelterAnimals = ref([
 </style>
 <script>
 export default {
-  name: "ShelterMainView",
+    name: "ShelterMainView",
+    components: { ShelterAddPet }
 };
 </script>
