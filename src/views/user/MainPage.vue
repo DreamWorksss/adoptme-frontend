@@ -19,9 +19,9 @@
   </div>
 
     <div class="image-container">
-      <img src="@/assets/dog1_main_page.jpg" alt="Dog 1" class="image">
-      <img src="@/assets/cat_main_page.jpg" alt="Cat 1" class="image">
-      <img src="@/assets/dog2_main_page.jpg" alt="Dog 2" class="image">
+      <img src="../../assets/dog1_main_page.jpg" alt="Dog 1" class="image">
+      <img src="../../assets/cat_main_page.jpg" alt="Cat 1" class="image">
+      <img src="../../assets/dog2_main_page.jpg" alt="Dog 2" class="image">
     </div>
 
 </template>
