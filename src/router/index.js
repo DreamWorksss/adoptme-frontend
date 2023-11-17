@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import AdoptionForm from '../components/AdoptionForm.vue'
+import AdoptionForm from '../views/User/AdoptionFormPage.vue'
 
 const routes = [
   {
