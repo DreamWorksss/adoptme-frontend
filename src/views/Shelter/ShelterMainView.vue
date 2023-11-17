@@ -1,16 +1,11 @@
 <script setup>
 import ShelterPetCard from "@/components/PetCards/ShelterPetCard.vue";
 import ShelterAddPet from "@/components/ShelterComponenets/ShelterAddPet.vue";
+import useShelterStore from "@/Store/shelterStore"
 
-import { ref } from "vue";
-
+const shelterStore = useShelterStore()
 // state
-const shelterAnimals = ref([
-  { name: "aaaaa", dateOfBirth: "12.12.2021", gender: "male" },
-  { name: "bbbbb", dateOfBirth: "12.12.2020", gender: "male" },
-  { name: "ccccc", dateOfBirth: "12.12.2019", gender: "female" },
-  { name: "ddddd", dateOfBirth: "12.12.2018", gender: "male" },
-]);
+const shelterAnimals = shelterStore.getShelterPets();
 </script>
 
 <template>

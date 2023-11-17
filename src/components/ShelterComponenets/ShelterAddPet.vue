@@ -1,25 +1,40 @@
 <script setup>
 import { shallowRef } from "vue";
+import useShelterStore from "@/Store/shelterStore";
 
-var name = shallowRef("");
-let gender = shallowRef();
-let dateOfBirth = shallowRef("");
-let color = shallowRef("");
-let description = shallowRef("");
+const shelterStore = useShelterStore();
+const name = shallowRef("");
+const gender = shallowRef();
+const dateOfBirth = shallowRef("");
+const color = shallowRef("");
+const description = shallowRef("");
 
 const clearFields = () => {
   name.value = "";
   gender.value = undefined;
-  dateOfBirth.value = ""
-  color.value = ""
-  description.value = ""
-}
+  dateOfBirth.value = "";
+  color.value = "";
+  description.value = "";
+};
 
+const addAnimal = () => {
+  let animalObj = {
+    name: name.value,
+    gender: gender.value,
+    dateOfBirth: dateOfBirth.value,
+    color: color.value,
+    description: description.value,
+  };
+
+  shelterStore.addPet(animalObj);
+};
 </script>
 <template>
   <v-dialog transition="dialog-top-transition" width="70%" persistent>
     <template v-slot:activator="{ props }">
-      <v-btn v-bind="props" flat height="auto" color="rgb(255, 201, 116, 0.6)">Add +</v-btn>
+      <v-btn v-bind="props" flat height="auto" color="rgb(255, 201, 116, 0.6)"
+        >Add +</v-btn
+      >
     </template>
     <template v-slot:default="{ isActive }">
       <v-card class="v-card-background">
@@ -87,8 +102,7 @@ const clearFields = () => {
 
                 <v-col cols="12" sm="12" md="6">
                   <v-text-field
-                  
-                  v-model="color"
+                    v-model="color"
                     color="#2A9D8F"
                     baseColor="#2A9D8F"
                     label="Color"
@@ -99,8 +113,7 @@ const clearFields = () => {
 
                 <v-col cols="12">
                   <v-textarea
-                  
-                  v-model="description"
+                    v-model="description"
                     color="#2A9D8F"
                     baseColor="#2A9D8F"
                     variant="outlined"
@@ -125,7 +138,16 @@ const clearFields = () => {
             "
             >Cancel</v-btn
           >
-          <v-btn variant="text" @click="isActive.value = false">Confirm</v-btn>
+          <v-btn
+            variant="text"
+            @click="
+              {
+                addAnimal();
+                isActive.value = false;
+              }
+            "
+            >Confirm</v-btn
+          >
         </v-card-actions>
       </v-card>
     </template>

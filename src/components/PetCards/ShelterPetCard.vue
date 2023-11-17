@@ -1,16 +1,19 @@
+<script setup></script>
+
 <template>
   <v-card class="mx-auto" variant="elevated">
     <div class="pa-2 card-background">
+      
       <div class="d-flex">
         <v-img
           :aspect-ratio="16 / 9"
           cover
-          src="https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/QyDHB4YHkK2V6TA6QkDzSIMbQpg9IIUKO5tn8KuDcJ1.jpeg"
+          src="https://images.wallpaperscraft.com/image/single/lynx_predator_funny_1046243_300x255.jpg"
         />
-        <div class="mx-4 align-self-center text-h5">{{name}}</div>
       </div>
 
       <div class="d-flex flex-column align-start mt-2">
+        <div class="mx-4 align-self-center text-h5">{{name}}</div>
         <div class="text-subtitle-1">Gender: {{gender}}</div>
         <div class="text-subtitle-1">Date of birth: {{dateOfBirth}}</div>
       </div>
@@ -33,7 +36,8 @@
   background: linear-gradient(
     0deg,
     rgba(42, 157, 143, 0.4) 0%,
-    rgba(42, 157, 143, 0) 100%
+    rgba(42, 157, 143, 0.3) 30%,
+    rgba(42, 157, 143, 0) 50%
   );
 }
 

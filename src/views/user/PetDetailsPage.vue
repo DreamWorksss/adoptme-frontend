@@ -13,7 +13,7 @@
         <v-img
             :src="petDetails.photo"
             alt="Photo of {{ petDetails.name }}"
-            :aspect-ratio="16/9">
+            :aspect-ratio="4/3">
         </v-img>
         <div class="d-flex flex-column mx-auto">
           <v-btn text="ADOPT" class="adopt-button my-10 rounded-l elevation-7"></v-btn>
@@ -26,7 +26,7 @@
 
 <script>
 import {defineComponent} from 'vue';
-import {usePetStore} from '@/store.js';
+import {usePetStore} from '@/Store/store.js';
 
 export default defineComponent({
   name: 'PetDetailsPage',
