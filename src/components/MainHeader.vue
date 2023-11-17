@@ -11,7 +11,7 @@
   </header>
 </template>
 
-<style>
+<style scoped>
 header {
   display: flex;
   min-height: 5rem;
