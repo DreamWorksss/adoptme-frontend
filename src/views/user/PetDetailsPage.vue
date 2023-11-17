@@ -1,7 +1,7 @@
 <template>
   <div class="pet-details-page">
-    <div class="d-flex flex-row font-italic mt-3 mx-10">
-      <div class="text-content text-left text-h6 font-weight-regular mr-5">
+    <div class="d-flex flex-row font-italic mt-3">
+      <div class="text-content text-left text-h6 font-weight-regular w-66 ml-15">
         <p>Name: {{ petDetails.name }}</p>
         <p>Gender: {{ petDetails.gender }}</p>
         <p>Date of Birth: {{ petDetails.dateOfBirth }}</p>
@@ -9,12 +9,11 @@
         <p>Description: </p>
         <p class="font-weight-light mt-4"> &ensp; {{ petDetails.description }}</p>
       </div>
-      <div class="d-flex flex-column">
+      <div class="d-flex flex-column w-100">
         <v-img
             :src="petDetails.photo"
             alt="Photo of {{ petDetails.name }}"
-            width="600"
-            aspect-ratio="16/9">
+            :aspect-ratio="16/9">
         </v-img>
         <div class="d-flex flex-column mx-auto">
           <v-btn text="ADOPT" class="adopt-button my-10 rounded-l elevation-7"></v-btn>
