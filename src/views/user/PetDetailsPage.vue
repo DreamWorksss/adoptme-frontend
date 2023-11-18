@@ -16,7 +16,7 @@
             :aspect-ratio="16/9">
         </v-img>
         <div class="d-flex flex-column mx-auto">
-          <v-btn text="ADOPT" class="adopt-button my-10 rounded-l elevation-7"></v-btn>
+          <v-btn text="ADOPT" class="adopt-button my-10 rounded-l elevation-7" @click="redirectToForm"></v-btn>
           <v-btn text="ADOPT AT A DISTANCE" class="adopt-button mb-10 rounded-l elevation-7"></v-btn>
         </div>
       </div>
@@ -39,7 +39,15 @@ export default defineComponent({
     const petId = this.$route.params.id;
     usePetStore().fetchPetDetails(petId);
   },
+  methods: {
+    redirectToForm() {
+        this.$router.push('/form/' + this.$route.params.id)
+      }
+    }
 });
+
+
+
 </script>
 
 <style>
