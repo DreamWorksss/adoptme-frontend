@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import AdoptionForm from '../views/User/AdoptionFormPage.vue'
 import MainPage from '../views/MainPage.vue'
 import PetDetailsPage from "@/views/user/PetDetailsPage.vue";
+
+import ShelterMainView from '../views/Shelter/ShelterMainView.vue'
 import AnimalsListView from '../views/User/AnimalsListView.vue'
 
 const routes = [
@@ -10,10 +12,15 @@ const routes = [
     name: 'home',
     component: MainPage
   },
+  {path: '/pets/:id',
+  name: 'PetDetails',
+  component: PetDetailsPage,
+
+  },
   {
-    path: '/pets/:id',
-    name: 'PetDetails',
-    component: PetDetailsPage,
+    path: '/shelter',
+    name: 'shelter',
+    component: ShelterMainView
   },
   {
     path: '/form/:id',
