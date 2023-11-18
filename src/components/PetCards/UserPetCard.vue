@@ -16,7 +16,7 @@
           <div class="d-flex flex-column align-center">
             <div class="mx-4 align-self-center text-h5">{{ name }}</div>
             <div class="text-subtitle-1">Gender: {{ gender }}</div>
-            <div class="text-subtitle-1">Shelter: {{ shelterName }}</div>
+            <div class="text-subtitle-1">Shelter: {{ shelter }}</div>
           </div>
         </div>
 
@@ -26,6 +26,7 @@
               class="more-button text-body-1 align-end" 
               text="More"
               append-icon="mdi-arrow-right"
+              @click="moreCallback"
             >
               More
             </v-btn>
@@ -61,7 +62,7 @@
 
 <script>
 export default {
-  props: ["name", "gender", "shelterName", "imageUrl", "moreCallback"],
+  props: ["id", "name", "gender", "shelter", "imageUrl", "moreCallback"],
   name: "UserPetCard",
 };
 </script>

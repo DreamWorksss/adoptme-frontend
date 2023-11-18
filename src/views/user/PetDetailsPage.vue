@@ -37,7 +37,7 @@ export default defineComponent({
   },
   mounted() {
     const petId = this.$route.params.id;
-    usePetStore().fetchPetDetails(petId);
+    // usePetStore().fetchPetDetails(petId);
   },
   methods: {
     redirectToForm() {
@@ -68,6 +68,5 @@ export default defineComponent({
   background: #f0d7a3;
   color: #2a9d8fbf;
 }
-
 
 </style>
