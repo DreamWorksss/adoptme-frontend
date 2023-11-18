@@ -1,5 +1,6 @@
 <script setup>
 import UserPetCard from "@/components/PetCards/UserPetCard.vue";
+import router from "@/router";
 import { ref, watch } from "vue";
 
 const shelterAnimals = ref([
