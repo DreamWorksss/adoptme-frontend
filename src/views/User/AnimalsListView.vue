@@ -16,17 +16,11 @@ const filteredAnimals = ref(shelterAnimals.value);
 
 const applyFilter = () => {
   switch (filterOption.value) {
-    case 'Name':
-      filteredAnimals.value = shelterAnimals.value.filter(pet => pet.name.toLowerCase().includes(searchTerm.value.toLowerCase()));
-      break;
     case 'Female':
       filteredAnimals.value = shelterAnimals.value.filter(pet => pet.gender.toLowerCase() === 'female');
       break;
     case 'Male':
       filteredAnimals.value = shelterAnimals.value.filter(pet => pet.gender.toLowerCase() === 'male');
-      break;
-    case 'Shelter':
-      filteredAnimals.value = shelterAnimals.value.filter(pet => pet.shelter.toLowerCase().includes(searchTerm.value.toLowerCase()));
       break;
     default:
       // Default to no filtering if the option is not recognized
@@ -37,9 +31,9 @@ const applyFilter = () => {
 watch(searchTerm, applyFilter);
 watch(filterOption, applyFilter);
 
+
 const openDetails = (pet) => {
-  // Implement the logic to open more details for the selected pet
-  console.log(`Opening details for ${pet.name}`);
+  router.push({ name: 'pet-details', params: { id: pet.name } });
 };
 
 </script>
@@ -78,10 +72,9 @@ const openDetails = (pet) => {
           </v-btn>
         </template>
         <v-list>
-          <v-list-item @click="filterOption = 'Name'">Name</v-list-item>
+          <v-list-item @click="filterOption = 'All'">All</v-list-item>
           <v-list-item @click="filterOption = 'Female'">Female</v-list-item>
           <v-list-item @click="filterOption = 'Male'">Male</v-list-item>
-          <v-list-item @click="filterOption = 'Shelter'">Shelter</v-list-item>
         </v-list>
       </v-menu>
     </div>
