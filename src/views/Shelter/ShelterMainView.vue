@@ -76,9 +76,9 @@ const addPet = (petObj) => {
             :dateOfBirth="pet.dateOfBirth"
             :gender="pet.gender"
           >
-          <template #inImage>
+          <template #icons>
               
-            <div class="w-100 h-100 justify-end corner-image icon-color align-end" style="display: flex;">
+            <div class="w-100 h-100 justify-start icon-color align-end" style="display: flex;">
               <v-btn icon="mdi-clipboard-edit" variant="plain" class="text-h5">
               
               </v-btn>
