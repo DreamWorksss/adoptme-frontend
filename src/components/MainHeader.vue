@@ -12,7 +12,7 @@ const navigateToShelter = () => {
   <header class="elevation-0" style="color: #5BB4A9;">
     <div class="flex-fill mx-10">
       <div class="d-flex justify-space-between align-center flex-column flex-sm-row"  size="large">
-        <div class="d-flex">
+        <div class="d-flex" @click="router.push({path: '/'})">
           <img src="@/assets/logo.png" alt="AdoptMe Logo" class="logo" />
         <div class="text-h4 text-no-wrap">
           AdoptMe<span v-if="uiState.pageMoreInfo != undefined">: </span> 
