@@ -3,7 +3,7 @@
     <div class="flex-fill mx-10">
       <div class="d-flex justify-space-between align-center" size="large">
         <div class="text-h4">AdoptMe: {{ "More info" }}</div>
-        <v-btn rounded flat color="#ffc974" text="Shelter"></v-btn>
+        <v-btn rounded flat color="rgb(255, 201, 116, 0.7)" text="Shelter"></v-btn>
       </div>
 
       <div class="text-subtitle-1 text-left">Find Your Fur-ever Companion!</div>
