@@ -1,11 +1,35 @@
+<script setup>
+import useUIStateStore from "@/Store/uiStateStore";
+import router from "@/router";
+
+const uiState = useUIStateStore();
+
+const navigateToShelter = () => {
+  router.push({ path: "/shelter" });
+};
+</script>
 <template>
   <header class="elevation-0">
     <div class="flex-fill mx-10">
       <div class="d-flex justify-space-between align-center" size="large">
-        <img src="@/assets/logo.png" alt="AdoptMe Logo" class="logo">
-        <div class="text-h4">AdoptMe</div>
+        <img src="@/assets/logo.png" alt="AdoptMe Logo" class="logo" />
+        <div class="text-h4">
+          AdoptMe<span v-if="uiState.pageMoreInfo != undefined">: </span> 
+          <span v-if="uiState.pageMoreInfo != undefined">{{ uiState.pageMoreInfo }}</span>
+        </div>
         <div class="flex-fill"></div>
-        <v-btn rounded flat color="#ffc974" text="Shelter"></v-btn>
+        <v-btn
+          rounded
+          flat
+          color="#ffc974"
+          text="Shelter"
+          @click="navigateToShelter"
+          v-if="uiState.shelterButtonVisibility"
+        ></v-btn>
+
+        <div class="text-h4" v-if="uiState.shelterNameVisibility">
+          {{ uiState.shelterName }}
+        </div>
       </div>
 
       <div class="text-subtitle-1 text-left">Find Your Fur-ever Companion!</div>
@@ -31,7 +55,6 @@ header {
   height: auto;
   margin-right: 10px;
 }
-
 </style>
 
 <script></script>
