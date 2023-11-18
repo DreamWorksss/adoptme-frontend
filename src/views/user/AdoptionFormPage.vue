@@ -17,7 +17,7 @@
       </div>
       
       <div class="form-row" style="margin-top: -6rem;">
-        <v-btn rounded flat class="button" @click="submitForm" text="Submit"></v-btn>
+        <v-btn rounded-1 flat class="button" @click="submitForm" text="Submit"></v-btn>
       </div>
 
     </form>
@@ -67,7 +67,6 @@ input {
   width: 35%;
   padding: 1rem;
   background-color: #ffffff;
-  border: 1px solid #ddd;
   border-radius: 0.5rem;
   box-sizing: border-box;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(65, 65, 65, 0.5);
@@ -77,7 +76,6 @@ textarea {
   width: 35%;
   padding: 1rem;
   background-color: #ffffff;
-  border: 1px solid #ddd;
   border-radius: 0.5rem;
   box-sizing: border-box;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(65, 65, 65, 0.5);

@@ -9,9 +9,9 @@
 
 <style>
 
-body::-webkit-scrollbar {display: none;}
+/* body::-webkit-scrollbar {display: none;}
 
-body {overflow: hidden;}
+body {overflow: hidden;} */
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
