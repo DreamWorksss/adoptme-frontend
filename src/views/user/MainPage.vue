@@ -13,7 +13,7 @@
   </div>
 
    <div class="button-container">
-    <v-btn rounded flat color="#ffc974" text="ADOPT" class="custom-btn"></v-btn>
+    <v-btn rounded flat color="#ffc974" text="ADOPT" class="custom-btn" @click="navigateToPets"></v-btn>
     <v-btn rounded flat color="#ffc974" text="DONATE" class="custom-btn"></v-btn>
     <v-btn rounded flat color="#ffc974" text="VOLUNTEER" class="custom-btn"></v-btn>
   </div>
@@ -28,7 +28,13 @@
 
 <script>
 export default {
-  name: 'AdoptMePage'
+  name: 'AdoptMePage',
+  methods: {
+    navigateToPets() {
+      // Programmatically navigate to the "/pets" route
+      this.$router.push('/pets');
+    },
+  },
 }
 </script>
 

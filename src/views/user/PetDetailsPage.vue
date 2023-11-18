@@ -26,7 +26,7 @@
 
 <script>
 import {defineComponent} from 'vue';
-import {usePetStore} from '@/store.js';
+import {usePetStore} from '@/Store/store.js';
 
 export default defineComponent({
   name: 'PetDetailsPage',
@@ -37,7 +37,7 @@ export default defineComponent({
   },
   mounted() {
     const petId = this.$route.params.id;
-    usePetStore().fetchPetDetails(petId);
+    // usePetStore().fetchPetDetails(petId);
   },
 });
 </script>
@@ -60,6 +60,5 @@ export default defineComponent({
   background: #f0d7a3;
   color: #2a9d8fbf;
 }
-
 
 </style>

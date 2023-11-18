@@ -25,5 +25,13 @@ export const usePetStore = defineStore('pet', {
                 photo: 'https://s.hdnux.com/photos/01/24/13/76/22069121/4/rawImage.jpg',
             };
         },
+        setSelectedPet(pet) {
+            this.selectedPet.name = pet.name;
+            this.selectedPet.gender = pet.gender;
+            this.selectedPet.dateOfBirth = pet.dateOfBirth;
+            this.selectedPet.shelter = pet.shelter;
+            this.selectedPet.description = pet.description;
+            this.selectedPet.photo = pet.imageUrl;
+        }
     },
 });
