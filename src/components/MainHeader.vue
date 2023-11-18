@@ -9,20 +9,26 @@ const navigateToShelter = () => {
 };
 </script>
 <template>
-  <header class="elevation-0">
+  <header class="elevation-0" style="color: #5BB4A9;">
     <div class="flex-fill mx-10">
-      <div class="d-flex justify-space-between align-center" size="large">
-        <img src="@/assets/logo.png" alt="AdoptMe Logo" class="logo" />
-        <div class="text-h4">
+      <div class="d-flex justify-space-between align-center flex-column flex-sm-row"  size="large">
+        <div class="d-flex">
+          <img src="@/assets/logo.png" alt="AdoptMe Logo" class="logo" />
+        <div class="text-h4 text-no-wrap">
           AdoptMe<span v-if="uiState.pageMoreInfo != undefined">: </span> 
           <span v-if="uiState.pageMoreInfo != undefined">{{ uiState.pageMoreInfo }}</span>
         </div>
+        </div>
+        
         <div class="flex-fill"></div>
         <v-btn
           rounded
           flat
-          color="#ffc974"
-          text="Shelter"
+          color="black"
+          variant="plain"
+          text="To Shelter"
+          append-icon="mdi-swap-horizontal"
+          class="text-body-1"
           @click="navigateToShelter"
           v-if="uiState.shelterButtonVisibility"
         ></v-btn>
@@ -32,7 +38,7 @@ const navigateToShelter = () => {
         </div>
       </div>
 
-      <div class="text-subtitle-1 text-left">Find Your Fur-ever Companion!</div>
+      <div class="text-subtitle-1 text-center text-black text-sm-left">Find Your Fur-ever Companion!</div>
     </div>
   </header>
 </template>

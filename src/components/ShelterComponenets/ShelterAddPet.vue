@@ -1,8 +1,10 @@
 <script setup>
 import { shallowRef } from "vue";
-import useShelterStore from "@/Store/shelterStore";
 
-const shelterStore = useShelterStore();
+const props = defineProps({ 
+  submitCallback: Function
+});
+
 const name = shallowRef("");
 const gender = shallowRef();
 const dateOfBirth = shallowRef("");
@@ -11,11 +13,11 @@ const description = shallowRef("");
 
 const clearFields = () => {
   name.value = "";
-  gender.value = undefined;
+  gender.value = undefined;  
   dateOfBirth.value = "";
   color.value = "";
   description.value = "";
-};
+}; 
 
 const addAnimal = () => {
   let animalObj = {
@@ -26,9 +28,10 @@ const addAnimal = () => {
     description: description.value,
   };
 
-  shelterStore.addPet(animalObj);
+  props.submitCallback(animalObj);
 };
 </script>
+
 <template>
   <v-dialog transition="dialog-top-transition" width="70%" persistent>
     <template v-slot:activator="{ props }">

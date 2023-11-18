@@ -7,6 +7,10 @@ const shelterStore = useShelterStore()
 const shelterAnimals = shelterStore.getShelterPets();
 
 const items = [1]
+
+const addPet = (petObj) => {
+  shelterStore.addPet(petObj);
+}
 </script>
 
 <template>
@@ -25,7 +29,8 @@ const items = [1]
           bg-color="rgba(255, 201, 116, 0.7)"
         ></v-text-field>
 
-        <ShelterAddPet>
+        <ShelterAddPet  
+            :submitCallback="addPet">
         </ShelterAddPet>
         
       </div>
@@ -62,7 +67,7 @@ const items = [1]
           cols="12"
           sm="6"
           md="4"
-          lg="4"
+          lg="3"
           v-for="(pet, index) in shelterAnimals"
           v-bind:key="index"
         >
