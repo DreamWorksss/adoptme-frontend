@@ -26,7 +26,7 @@ const addPet = (petObj) => {
           single-line
           hide-details
           append-inner-icon="mdi-magnify"
-          bg-color="rgba(255, 201, 116, 0.7)"
+          bg-color="rgba(255, 201, 116, 0.6)"
         ></v-text-field>
 
         <ShelterAddPet  
@@ -75,6 +75,7 @@ const addPet = (petObj) => {
             :name="pet.name"
             :dateOfBirth="pet.dateOfBirth"
             :gender="pet.gender"
+            :imageUrl="pet.imageUrl"
           >
           <template #icons>
               

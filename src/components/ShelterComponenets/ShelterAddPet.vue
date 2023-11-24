@@ -26,6 +26,7 @@ const addAnimal = () => {
     dateOfBirth: dateOfBirth.value,
     color: color.value,
     description: description.value,
+    imageUrl: "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg"
   };
 
   props.submitCallback(animalObj);

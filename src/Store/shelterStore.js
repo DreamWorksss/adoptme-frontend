@@ -7,10 +7,10 @@ const usePetStore = defineStore("shelter", () => {
   const uiState = useUIStateStore();
   uiState.shelterName = shelterName.value;
   const shelterPets = ref([
-    { id:1, name: "aaaaa", dateOfBirth: "12.12.2021", gender: "male" },
-    { id:2, name: "bbbbb", dateOfBirth: "12.12.2020", gender: "male" },
-    { id:3, name: "ccccc", dateOfBirth: "12.12.2019", gender: "female" },
-    { id:4, name: "ddddd", dateOfBirth: "12.12.2018", gender: "male" },
+    { id:1, name: "Rocky", dateOfBirth: "20.06.2021", gender: "male", imageUrl: "https://www.princeton.edu/sites/default/files/styles/1x_full_2x_half_crop/public/images/2022/02/KOA_Nassau_2697x1517.jpg?itok=Bg2K7j7J" },
+    { id:2, name: "Rex", dateOfBirth: "12.12.2020", gender: "male", imageUrl: "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
+    { id:3, name: "Cleopatra", dateOfBirth: "03.12.2019", gender: "female", imageUrl: "https://i.insider.com/5b33968e5e48ec1f008b4588?width=1200&format=jpeg" },
+    { id:4, name: "Thor", dateOfBirth: "14.10.2018", gender: "male", imageUrl: "https://www.purina.co.uk/sites/default/files/2020-12/Dog_1098119012_Teaser.jpg" },
   ]);
 
   const getShelterPets = () => {

@@ -7,7 +7,7 @@
         <v-img
           :aspect-ratio="16 / 9"
           cover
-          src="https://images.wallpaperscraft.com/image/single/lynx_predator_funny_1046243_300x255.jpg"
+          :src="imageUrl"
         >
         </v-img>
       </div>
@@ -60,7 +60,7 @@
 
 <script>
 export default {
-  props: ["name", "gender", "dateOfBirth", "moreCallback"],
+  props: ["name", "gender", "dateOfBirth", "imageUrl", "moreCallback"],
   name: "ShelterPetCard",
 };
 </script>
