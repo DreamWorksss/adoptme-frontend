@@ -53,11 +53,6 @@
   font-style: italic;
 }
 
-.animal-name-text {
-  font-weight: 500;
-  font-style: italic;
-}
-
 </style>
 
 <script>

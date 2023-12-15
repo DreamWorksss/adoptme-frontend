@@ -4,7 +4,7 @@ import MainPage from '../views/MainPage.vue'
 import PetDetailsPage from "../views/User/PetDetailsPage.vue";
 
 import ShelterMainView from '../views/Shelter/ShelterMainView.vue'
-import AnimalsListView from '../views/User/AnimalsListView.vue'
+import PetListView from '../views/User/PetListView.vue'
 
 const routes = [
   {
@@ -15,7 +15,7 @@ const routes = [
   {path: '/pets/:id',
   name: 'PetDetails',
   component: PetDetailsPage,
-
+  props : {default: true, PetDetailsPage: true}
   },
   {
     path: '/shelter',
@@ -30,7 +30,7 @@ const routes = [
   {
     path: '/pets',
     name: 'pets',
-    component: AnimalsListView
+    component: PetListView
   }
 ]
 

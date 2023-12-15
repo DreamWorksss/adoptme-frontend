@@ -31,7 +31,6 @@ const useUIStateStore = defineStore("uiState", () => {
 
   router.beforeEach((to, from) => {
     setUiStateBastedOn(to);
-    console.log(to, from);
   });
 
   return { shelterButtonVisibility, shelterNameVisibility, shelterName, pageMoreInfo };

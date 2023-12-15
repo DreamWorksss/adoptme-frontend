@@ -1,36 +1,53 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import useUIStateStore from "./uiStateStore";
+import API from "./Mockup/api";
+import usePetStore from "./store";
 
-const usePetStore = defineStore("shelter", () => {
-  const shelterName = ref("Hopeful Hearts");
-  const uiState = useUIStateStore();
-  uiState.shelterName = shelterName.value;
-  const shelterPets = ref([
-    { id:1, name: "Rocky", dateOfBirth: "20.06.2021", gender: "male", imageUrl: "https://www.princeton.edu/sites/default/files/styles/1x_full_2x_half_crop/public/images/2022/02/KOA_Nassau_2697x1517.jpg?itok=Bg2K7j7J" },
-    { id:2, name: "Rex", dateOfBirth: "12.12.2020", gender: "male", imageUrl: "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-    { id:3, name: "Cleopatra", dateOfBirth: "03.12.2019", gender: "female", imageUrl: "https://i.insider.com/5b33968e5e48ec1f008b4588?width=1200&format=jpeg" },
-    { id:4, name: "Thor", dateOfBirth: "14.10.2018", gender: "male", imageUrl: "https://www.purina.co.uk/sites/default/files/2020-12/Dog_1098119012_Teaser.jpg" },
-  ]);
+const SHELTER_ID = 0;
 
-  const getShelterPets = () => {
-    return shelterPets;
-  }
-  const addPet = (pet) => {
-    var lastID = Math.max(...shelterPets.value.map(element => element.id));
-    shelterPets.value.push({...pet, id: lastID + 1});
-  };
+const useShelterPetStore = defineStore("shelter", () => {
 
-  const deletePet = (petID) => {
-    const index = shelterPets.value.findIndex(element => element.id === petID);
+    const shelterPets = ref([]);
+    const shelterName = ref("Hopeful Hearts");
 
-    if (index < 0)
-      return;
+    const petStore = usePetStore(); 
 
-    shelterPets.value.splice(index, 1);
-  }
+    const updatePetStoreCallback = petStore.updatePetStore;
 
-  return { shelterPets, getShelterPets, addPet, deletePet };
+    const uiState = useUIStateStore();
+    uiState.shelterName = shelterName.value;
+
+    API.FetchAllPetsFromShelter(SHELTER_ID).then((result) => {
+        shelterPets.value = [...result];
+    });
+
+    const refetchData = () => {
+      API.FetchAllPetsFromShelter(SHELTER_ID).then((result) => {
+        shelterPets.value = [...result];
+    });
+    }
+
+    const dataUpdated = () => {
+      refetchData();
+      updatePetStoreCallback();
+    }
+
+    const getShelterPets = () => {
+        return shelterPets;
+    };
+
+    const addPet = (pet) => {
+      API.AddPet(pet)
+        .then(() => dataUpdated())
+    };
+
+    const deletePet = (petID) => {
+      API.RemovePet(petID)
+        .then(() => dataUpdated())
+    };
+
+    return { shelterPets, getShelterPets, addPet, deletePet };
 });
 
-export default usePetStore;
+export default useShelterPetStore;

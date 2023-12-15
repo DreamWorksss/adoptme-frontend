@@ -4,7 +4,7 @@ import ShelterAddPet from "@/components/ShelterComponenets/ShelterAddPet.vue";
 import useShelterStore from "@/Store/shelterStore"
 
 const shelterStore = useShelterStore()
-const shelterAnimals = shelterStore.getShelterPets();
+const shelterPets = shelterStore.getShelterPets();
 
 const items = [1]
 
@@ -68,8 +68,8 @@ const addPet = (petObj) => {
           sm="6"
           md="4"
           lg="3"
-          v-for="(pet, index) in shelterAnimals"
-          v-bind:key="index"
+          v-for="(pet, index) in shelterPets"
+          :key="index"
         >
           <ShelterPetCard
             :name="pet.name"
