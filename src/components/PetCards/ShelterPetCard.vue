@@ -2,7 +2,7 @@
 
 <template>
   <v-card class="mx-auto" variant="flat">
-    <div class="card-background">
+    <div>
       <div class="d-flex">
         <v-img
           :aspect-ratio="16 / 9"
@@ -37,16 +37,6 @@
 </template>
 
 <style scoped>
-.card-background {
-  /*background: rgba(255, 201, 116, 0.5);
-  background: rgba(42, 157, 143, 0.5);
-  background: linear-gradient(
-    180deg,
-    rgba(42, 157, 143, 0.4) 0%,
-    rgba(42, 157, 143, 0.4) 80%
-  )*/
-}
-
 .card-info-background {
   background: rgba(42, 157, 143, 0.1);
   border: 2px solid rgba(42, 157, 143, 0.2);

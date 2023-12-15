@@ -35,7 +35,6 @@ watch(searchTerm, applyFilter);
 watch(filterOption, applyFilter);
 
 const openDetails = (pet) => {
-	console.log(pet);
 	petStore.setSelectedPet(pet);
 	router.push({ name: "PetDetails", params: { id: pet.id } });
 };

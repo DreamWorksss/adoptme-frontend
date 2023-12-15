@@ -45,7 +45,7 @@
   };
   </script>
   
-  <style scoped>
+<style scoped>
 
 .styled-form {
   background: linear-gradient(to bottom, #ffffff, #2A9D8F);
