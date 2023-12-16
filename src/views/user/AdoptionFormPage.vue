@@ -1,55 +1,78 @@
 <template>
-    <form class="styled-form">
-      <div class="form-row">
-        <input type="text" id="name" v-model="formData.name" required placeholder="Name" />
-      </div>
-    
-      <div class="form-row">
-        <input type="phone_number" id="phoneNumber" v-model="formData.phoneNumber" required placeholder="Phone number"/>
-      </div>
-  
-      <div class="form-row">
-        <input type="email" id="email" v-model="formData.email" required placeholder="Email"/>
-      </div>
-  
-      <div class="form-row" style="height: 40%;">
-        <textarea style="height: 50%;" id="message" v-model="formData.message" required placeholder="Message"></textarea>
-      </div>
-      
-      <div class="form-row" style="margin-top: -6rem;">
-        <v-btn rounded-1 flat class="button" @click="submitForm" text="Submit"></v-btn>
-      </div>
+  <form class="styled-form">
+    <div class="form-row">
+      <input type="text" id="name" v-model="formData.name" required placeholder="Name" />
+    </div>
 
-    </form>
-  </template>
+    <div class="form-row">
+      <input type="phone_number" id="phoneNumber" v-model="formData.phoneNumber" required placeholder="Phone number" />
+    </div>
+
+    <div class="form-row">
+      <input type="email" id="email" v-model="formData.email" required placeholder="Email" />
+    </div>
+
+    <div class="form-row" style="height: 40%;">
+      <textarea style="height: 50%;" id="message" v-model="formData.message" required placeholder="Message"></textarea>
+    </div>
+
+    <div class="form-row" style="margin-top: -6rem;">
+      <v-btn rounded-1 flat class="button" @click="submitForm" text="Submit"></v-btn>
+    </div>
+
+  </form>
+</template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        formData: {
-          petID: this.$route.params.id,
-          name: '',
-          phoneNumber: '',
-          email: '',
-          message: ''
-        }
-      };
-    },
-    methods: {
-      submitForm() {
-        // API call here
-        console.log('Form submitted with data:', this.formData);
+<script setup>
+import useFormStore from "@/Store/formStore";
+import { reactive } from "vue";
+import { useRoute } from "vue-router";
+
+const formStore = useFormStore();
+const route = useRoute();
+
+console.log(formStore);
+
+const formData = reactive({
+  petID: route.params.id,
+  name: '',
+  phoneNumber: '',
+  email: '',
+  message: ''
+});
+
+const submitForm = () => {
+  // API call here
+  console.log(formStore);
+  console.log('Form submitted with data:', formData);
+}
+
+/*export default {
+  data() {
+    return {
+      formData: {
+        petID: this.$route.params.id,
+        name: '',
+        phoneNumber: '',
+        email: '',
+        message: ''
       }
+    };
+  },
+  methods: {
+    submitForm() {
+      // API call here
+      console.log(formStore);
+      console.log('Form submitted with data:', this.formData);
     }
-  };
-  </script>
+  }
+};*/
+</script>
   
-  <style scoped>
-
+<style scoped>
 .styled-form {
   background: linear-gradient(to bottom, #ffffff, #2A9D8F);
-  height: 100vh; 
+  height: 100vh;
   padding-top: 5%;
 }
 
