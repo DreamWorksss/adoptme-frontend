@@ -39,8 +39,8 @@
         <span style="color: gray;">Message: </span>{{ "I want to adopt this cootie patootie. =)))" }}</div>
 
       <v-card-actions class="justify-end">
-        <v-btn color="#5BB4A9" text :style="{ border: '2px solid #5BB4A9', 'border-radius': '15px', background: 'white' }">ACCEPT</v-btn>
-        <v-btn color="#5BB4A9" text :style="{ border: '2px solid #5BB4A9', 'border-radius': '15px', background: 'white' }">DECLINE</v-btn>
+        <v-btn color="#5BB4A9" text :style="{ border: '2px solid #5BB4A9', 'border-radius': '10px', background: 'white' }">ACCEPT</v-btn>
+        <v-btn color="#5BB4A9" text :style="{ border: '2px solid #5BB4A9', 'border-radius': '10px', background: 'white' }">DECLINE</v-btn>
       </v-card-actions>
     </v-card>
 
@@ -104,7 +104,8 @@
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(0deg, hsla(37, 100%, 73%, 1) 0%, hsla(0, 0%, 100%, 1) 60%);
+    background: rgb(255,201,116);
+    background: linear-gradient(0deg, rgba(255,201,116,0.7) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
     border: 2px solid #FFC974; 
   }
 
