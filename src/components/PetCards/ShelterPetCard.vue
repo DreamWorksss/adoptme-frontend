@@ -23,9 +23,10 @@
             <slot name="icons"></slot>
             <v-btn
               variant="plain"
-              class="text-body-1 align-self-center" 
+              class="more-button text-body-1 align-self-center" 
               text="More"
               append-icon="mdi-arrow-right"
+              @click="moreCallback"
             >
               More
             </v-btn>
@@ -50,7 +51,7 @@
 
 <script>
 export default {
-  props: ["name", "gender", "dateOfBirth", "imageUrl", "moreCallback"],
+  props: ["name", "gender", "dateOfBirth", "shelter", "description", "imageUrl", "moreCallback"],
   name: "ShelterPetCard",
 };
 </script>
