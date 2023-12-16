@@ -63,6 +63,32 @@ function createRepository() {
         },
     ];
 
+    this.adoptionRequests = [
+        {
+            id: 1,
+            petID: 0,
+            name: "Popescu Razvan",
+            phoneNumber: "0773217090",
+            email: "popescu_razvan@gmail.com",
+            message: "I want to adopt this cootie patootie. =)))",
+        },
+        {
+            id: 1,
+            petID: 0,
+            name: "PR",
+            phoneNumber: "0773217090",
+            email: "popescu_razvan@gmail.com",
+            message: "I want to adopt this cootie patootie. =)))",
+        },
+        {
+            id: 2,
+            petID: 1,
+            name: "Petrescu Georgiana",
+            phoneNumber: "0738114028",
+            email: "petrescu_georgiana@gmail.com",
+            message: " I want to adopt this cutie patootie. <333",
+        },
+    ];
     this.getPetById = (id) => {
         const index = this.findPetPositionById(id);
 
@@ -71,12 +97,10 @@ function createRepository() {
         }
 
         return undefined;
-    }
+    };
 
     this.addPet = (animal) => {
-        const lastID = Math.max(
-            ...this.petList.map((element) => element.id));
-        console.log({ ...animal, id: lastID + 1, shelterID: 0 });
+        const lastID = Math.max(...this.petList.map((element) => element.id));
         this.petList.push({ ...animal, id: lastID + 1, shelterID: 0 });
     };
 
@@ -88,7 +112,7 @@ function createRepository() {
 
         return -1;
     };
-    
+
     this.removePet = (animalId) => {
         const index = this.findPetPositionById(animalId);
         if (index == -1) return;
@@ -99,9 +123,42 @@ function createRepository() {
     this.updatePet = (newAnimal) => {
         const index = this.findPetPositionById(newAnimal.id);
         if (index == -1) return;
-        
+
         this.petList[index] = newAnimal;
     };
+
+    this.addRequest = (newRequest) => {
+        const lastID = Math.max(...this.adoptionRequests.map((element) => element.id));
+        this.adoptionRequests.push({ ...newRequest, id: lastID + 1});
+    };
+
+    this.findRequestPositionById = (requestID) => {
+        for (let index = 0; index < this.adoptionRequests.length; index++) {
+            const request = this.adoptionRequests[index];
+            if (request.id == requestID) return index;
+        }
+
+        return -1;
+    };
+
+    this.removeRequest = (requestID) => {
+        const index = this.findRequestPositionById(requestID);
+        if (index == -1) return;
+
+        this.adoptionRequests.splice(index, 1);
+    }
+
+    this.findRequestsForPet = (petID) => {
+        const result = [];
+        
+        for (const request of this.adoptionRequests)
+        {
+            if (request.petID == petID)
+                result.push(request);
+        }
+
+        return result;
+    }
 }
 
 export default createRepository;

@@ -23,8 +23,7 @@ const addPet = (petObj) => {
 }
 
 const openDetails = (pet) => {
-  console.log(pet);
-  /*petStore.setSelectedPet(pet);*/
+  shelterStore.setSelectedPet(pet);
   router.push({ name: 'ShelterPetDetails', params: { id: pet.id } });
 };
 

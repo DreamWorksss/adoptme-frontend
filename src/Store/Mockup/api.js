@@ -48,6 +48,27 @@ function createAPI() {
             resolve("OK")
         });
     }
+
+    this.FetchRequestForPet = (petID) => {
+        return new Promise((resolve => {
+            const requests = this.repo.findRequestsForPet(petID);
+            resolve(requests); 
+        }));
+    }
+
+    this.AddAdoptionRequest = (requst) => {
+        return new Promise((resolve => {
+            this.repo.addRequest(requst);
+            resolve("OK"); 
+        }));
+    }
+
+    this.DeleteRequest = (requestID) => {
+        return new Promise((resolve => {
+            this.repo.removeRequest(requestID);
+            resolve('OK');
+        }));
+    }
 }
 
 export default API;
