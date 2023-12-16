@@ -5,6 +5,7 @@ import PetDetailsPage from "../views/User/PetDetailsPage.vue";
 
 import ShelterMainView from '../views/Shelter/ShelterMainView.vue'
 import AnimalsListView from '../views/User/AnimalsListView.vue'
+import ShelterPetDetailsPage from '../views/Shelter/ShelterPetDetailsPage.vue'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/pets',
     name: 'pets',
     component: AnimalsListView
+  },
+  {
+    path: '/shelter/pets/:id',
+    name: 'ShelterPetDetails',
+    component: ShelterPetDetailsPage
   }
 ]
 

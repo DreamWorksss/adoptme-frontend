@@ -1,16 +1,26 @@
 <script setup>
 import ShelterPetCard from "@/components/PetCards/ShelterPetCard.vue";
 import ShelterAddPet from "@/components/ShelterComponenets/ShelterAddPet.vue";
-import useShelterStore from "@/Store/shelterStore"
+import router from "@/router";
+import useShelterStore from "@/Store/shelterStore";
+import { usePetStore } from "@/Store/store.js";
 
 const shelterStore = useShelterStore()
 const shelterAnimals = shelterStore.getShelterPets();
+const petStore = usePetStore();
 
 const items = [1]
 
 const addPet = (petObj) => {
   shelterStore.addPet(petObj);
 }
+
+const openDetails = (pet) => {
+  console.log(pet);
+  petStore.setSelectedPet(pet);
+  router.push({ name: 'ShelterPetDetails', params: { id: pet.id } });
+};
+
 </script>
 
 <template>
@@ -76,6 +86,7 @@ const addPet = (petObj) => {
             :dateOfBirth="pet.dateOfBirth"
             :gender="pet.gender"
             :imageUrl="pet.imageUrl"
+            :moreCallback="() => openDetails(pet)"
           >
           <template #icons>
               
