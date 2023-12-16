@@ -10,25 +10,29 @@ const shelterPets = shelterStore.getAllPets();
 
 const searchTerm = ref("");
 const filterOption = ref("");
-const filteredPets = computed(() => shelterPets.value);
-const petStore = usePetStore();
-
-const applyFilter = () => {
+const filteredPets = computed(() => {
+	let pets;
 	switch (filterOption.value) {
 		case "Female":
-			filteredPets.value = shelterPets.value.filter(
+			pets = shelterPets.value.filter(
 				(pet) => pet.gender.toLowerCase() === "female"
 			);
 			break;
 		case "Male":
-			filteredPets.value = shelterPets.value.filter(
+			pets = shelterPets.value.filter(
 				(pet) => pet.gender.toLowerCase() === "male"
 			);
 			break;
 		default:
 			// Default to no filtering if the option is not recognized
-			filteredPets.value = shelterPets.value;
+			pets = shelterPets.value;
 	}
+	return pets;
+});
+const petStore = usePetStore();
+
+const applyFilter = () => {
+	
 };
 
 watch(searchTerm, applyFilter);

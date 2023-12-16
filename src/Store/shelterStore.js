@@ -47,7 +47,14 @@ const useShelterPetStore = defineStore("shelter", () => {
         .then(() => dataUpdated())
     };
 
-    return { shelterPets, getShelterPets, addPet, deletePet };
+    const updatePet = (pet) => {
+      API.UpdatePet(pet)
+        .then(() => {
+          dataUpdated();
+        })
+    }
+
+    return { shelterPets, getShelterPets, addPet, deletePet, updatePet };
 });
 
 export default useShelterPetStore;

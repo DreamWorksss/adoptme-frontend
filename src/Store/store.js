@@ -19,7 +19,7 @@ const usePetStore = defineStore("pet", () => {
         })
     }
  
-    //remove this later
+    // remove this later
     // eslint-disable-next-line no-unused-vars
     const fetchPetDetails = (petID) => {
         // API call

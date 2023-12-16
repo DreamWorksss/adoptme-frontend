@@ -1,10 +1,19 @@
 <script setup>
 import ShelterPetCard from "@/components/PetCards/ShelterPetCard.vue";
 import ShelterAddPet from "@/components/ShelterComponenets/ShelterAddPet.vue";
+import ShelterUpdatePet from "@/components/ShelterComponenets/ShelterUpdatePet.vue";
 import useShelterStore from "@/Store/shelterStore"
+import useShelterUIStore from "@/Store/ui-store/shelterUIStore"
 
 const shelterStore = useShelterStore()
 const shelterPets = shelterStore.getShelterPets();
+const shelterUIStore = useShelterUIStore();
+const dialogVisibility = shelterUIStore.getDialogVisibility();
+
+const editbuttonClicked = (pet) => {
+  shelterUIStore.setPetToUpdate(pet);
+  dialogVisibility.value = true
+}
 
 const items = [1]
 
@@ -32,6 +41,10 @@ const addPet = (petObj) => {
         <ShelterAddPet  
             :submitCallback="addPet">
         </ShelterAddPet>
+
+        <ShelterUpdatePet>
+
+        </ShelterUpdatePet>
         
       </div>
 
@@ -80,7 +93,7 @@ const addPet = (petObj) => {
           <template #icons>
               
             <div class="w-100 h-100 justify-start icon-color align-end" style="display: flex;">
-              <v-btn icon="mdi-clipboard-edit" variant="plain" class="text-h5">
+              <v-btn icon="mdi-clipboard-edit" variant="plain" class="text-h5" @click="editbuttonClicked(pet)">
               
               </v-btn>
 

@@ -19,6 +19,7 @@ function createRepository() {
             dateOfBirth: "18-11-2022",
             shelter: "Paws and Claws Haven",
             shelterID: 0,
+            adoptionRequests: [],
             description:
                 '"Max, an adorable dog with a charming personality, awaits a loving home at Paws and Claws Haven. His playful spirit and friendly disposition make him an ideal companion for an active family. Max enjoys outdoor adventures and is sure to bring boundless joy to his adoptive family. If you\'re seeking a loyal canine friend, consider welcoming Max into your home."',
             imageUrl:
@@ -62,6 +63,16 @@ function createRepository() {
         },
     ];
 
+    this.getPetById = (id) => {
+        const index = this.findPetPositionById(id);
+
+        if (index != -1) {
+            return this.petList[index];
+        }
+
+        return undefined;
+    }
+
     this.addPet = (animal) => {
         const lastID = Math.max(
             ...this.petList.map((element) => element.id));
@@ -88,7 +99,7 @@ function createRepository() {
     this.updatePet = (newAnimal) => {
         const index = this.findPetPositionById(newAnimal.id);
         if (index == -1) return;
-
+        
         this.petList[index] = newAnimal;
     };
 }

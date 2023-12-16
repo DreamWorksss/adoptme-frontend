@@ -39,6 +39,15 @@ function createAPI() {
             resolve("OK")
         });
     };
+
+    this.UpdatePet = (pet) => {
+        return new Promise((resolve) => {
+            const newPet = {...this.repo.getPetById(pet.id), ...pet};
+            
+            this.repo.updatePet(newPet);
+            resolve("OK")
+        });
+    }
 }
 
 export default API;
