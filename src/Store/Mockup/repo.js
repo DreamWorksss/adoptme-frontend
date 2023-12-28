@@ -5,7 +5,7 @@ function createRepository() {
             name: "Rocky",
             gender: "male",
             dateOfBirth: "16-05-2019",
-            shelter: "Paw Palace",
+            shelter: "Hopeful Hearts",
             shelterID: 0,
             description:
                 "“Rocky, a heartwarming Golden Retriever, found his second chance at happiness through the compassionate efforts of Paw Palace. Rescued from challenging circumstances, Rocky now radiates joy and warmth. His gentle nature and friendly demeanor make him a beloved member of our shelter. Despite his past, Rocky embraces every moment with an infectious spirit, reminding us all of the transformative power of love and care. Adopting Rocky means welcoming a loyal companion into your home, ready to fill your life with boundless love and tail-wagging joy.”",
@@ -17,7 +17,7 @@ function createRepository() {
             name: "Max",
             gender: "male",
             dateOfBirth: "18-11-2022",
-            shelter: "Paws and Claws Haven",
+            shelter: "Hopeful Hearts",
             shelterID: 0,
             adoptionRequests: [],
             description:
@@ -30,7 +30,7 @@ function createRepository() {
             name: "Chloe",
             gender: "female",
             dateOfBirth: "13-04-2020",
-            shelter: "Whisker Whispers",
+            shelter: "Hopeful Hearts",
             shelterID: 0,
             description:
                 "\"Meet Chloe, a graceful feline resident of Whisker Whispers. This elegant cat enchants everyone with her charming presence. Chloe's journey began when our shelter's compassionate team found her abandoned, shivering, and scared on the cold city streets. She blossomed into the affectionate cat she is today. By welcoming Chloe into your home, you not only gain a stunning feline companion but also become a part of her heartwarming tale of transformation.\"",
@@ -67,7 +67,7 @@ function createRepository() {
         {
             id: 1,
             petID: 0,
-            name: "Popescu Razvan",
+            name: "PR",
             phoneNumber: "0773217090",
             email: "popescu_razvan@gmail.com",
             message: "I want to adopt this cootie patootie. =)))",
@@ -75,7 +75,7 @@ function createRepository() {
         {
             id: 1,
             petID: 0,
-            name: "PR",
+            name: "Popescu Razvan",
             phoneNumber: "0773217090",
             email: "popescu_razvan@gmail.com",
             message: "I want to adopt this cootie patootie. =)))",
@@ -101,7 +101,7 @@ function createRepository() {
 
     this.addPet = (animal) => {
         const lastID = Math.max(...this.petList.map((element) => element.id));
-        this.petList.push({ ...animal, id: lastID + 1, shelterID: 0 });
+        this.petList.push({ ...animal, id: lastID + 1, shelterID: 0, shelter: "Hopeful Hearts" });
     };
 
     this.findPetPositionById = (animalID) => {

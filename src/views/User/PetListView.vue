@@ -12,6 +12,7 @@ const searchTerm = ref("");
 const filterOption = ref("");
 const filteredPets = computed(() => {
 	let pets;
+	// Filter by gender
 	switch (filterOption.value) {
 		case "Female":
 			pets = shelterPets.value.filter(
@@ -27,6 +28,15 @@ const filteredPets = computed(() => {
 			// Default to no filtering if the option is not recognized
 			pets = shelterPets.value;
 	}
+
+	// Filter by name
+	if (searchTerm.value.trim() !== "") {
+		const searchTermLowerCase = searchTerm.value.toLowerCase();
+		pets = pets.filter((pet) =>
+		pet.name.toLowerCase().includes(searchTermLowerCase)
+		);
+	}
+
 	return pets;
 });
 const petStore = usePetStore();
@@ -61,6 +71,7 @@ const openDetails = (pet) => {
 					bg-color="rgb(255, 201, 116, 0.6)"
 				>
 				</v-text-field>
+				
 			</div>
 
 			<v-menu>

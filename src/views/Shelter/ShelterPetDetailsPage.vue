@@ -52,7 +52,7 @@ const decline = (id) => {
         <hr class="full-width-hr" />
         <br />
         <div>
-            <div
+            <div class="no-request-text"
             v-if="petDetails?.adoptionRequests == undefined || petDetails?.adoptionRequests.length == 0" 
             >No adoption request yet</div>
 
@@ -154,5 +154,10 @@ const decline = (id) => {
     font-style: italic;
     text-align: left;
     color: black;
+}
+
+.no-request-text {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 </style>

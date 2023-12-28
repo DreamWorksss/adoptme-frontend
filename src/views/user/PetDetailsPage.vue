@@ -58,10 +58,12 @@ const redirectToForm = () => {
                         text="ADOPT"
                         class="adopt-button my-10 rounded-l elevation-7"
                         @click="redirectToForm"
+                        style="color: #5BB4A9;"
                     ></v-btn>
                     <v-btn
                         text="ADOPT AT A DISTANCE"
                         class="adopt-button mb-10 rounded-l elevation-7"
+                        style="color: #5BB4A9;"
                     ></v-btn>
                 </div>
             </div>
