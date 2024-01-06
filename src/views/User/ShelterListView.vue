@@ -19,7 +19,7 @@ const shelters = allSheltersStore.getAllShelters();
             <div class="shelter-details">
               <h3 class="header-font">{{ shelter.name }}</h3>
               <p class="description-font">{{ shelter.description }}</p>
-              <v-btn class="donate-button" @click="navigateToDonate">Donate</v-btn>
+              <v-btn class="donate-button" @click="navigateToDonate(id)">Donate</v-btn>
             </div>
           </div>
         </li>
@@ -79,8 +79,8 @@ const shelters = allSheltersStore.getAllShelters();
 export default {
   name: "ShelterListView",
    methods: {
-    navigateToDonate() {
-      this.$router.push('/donate');
+    navigateToDonate(shelterID) {
+      this.$router.push('/donate/' + shelterID);
     },
   },
 };

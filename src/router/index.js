@@ -7,6 +7,7 @@ import ShelterMainView from '../views/Shelter/ShelterMainView.vue'
 import PetListView from '../views/User/PetListView.vue'
 import ShelterListView from '../views/User/ShelterListView.vue'
 import ShelterPetDetailsPage from '../views/Shelter/ShelterPetDetailsPage.vue'
+import DonatePage from '../views/User/DonatePage.vue'
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: '/shelters',
     name: 'shelters',
     component: ShelterListView
+  },
+  {
+    path: '/donate/:id',
+    name: 'donate',
+    component: DonatePage
   }
 ]
 
