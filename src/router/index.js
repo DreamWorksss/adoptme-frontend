@@ -6,6 +6,7 @@ import PetDetailsPage from "../views/User/PetDetailsPage.vue";
 import ShelterMainView from '../views/Shelter/ShelterMainView.vue'
 import PetListView from '../views/User/PetListView.vue'
 import ShelterPetDetailsPage from '../views/Shelter/ShelterPetDetailsPage.vue'
+import AccountRequestsPage from '../views/Admin/AccountRequestsPage.vue'
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: '/shelter/pet/:id',
     name: 'ShelterPetDetails',
     component: ShelterPetDetailsPage
+  },
+  {
+    path: '/admin/account-requests',
+    name: 'AccountRequests',
+    component: AccountRequestsPage
   }
 ]
 
