@@ -16,17 +16,25 @@
     </div>
   </div>
 
-   <div class="button-container">
-    <v-btn rounded flat color="rgba(255, 201, 116, 0.7)" text="ADOPT" class="custom-btn" @click="navigateToPets" style="color: #5BB4A9;"></v-btn>
-    <v-btn rounded flat color="rgba(255, 201, 116, 0.7)" text="DONATE" class="custom-btn" style="color: #5BB4A9;"></v-btn>
-    <v-btn rounded flat color="rgba(255, 201, 116, 0.7)" text="VOLUNTEER" class="custom-btn" style="color: #5BB4A9;"></v-btn>
-  </div>
-
     <div class="image-container">
       <img src="../assets/dog1_main_page.jpg" alt="Dog 1" class="image">
       <img src="../assets/cat_main_page.jpg" alt="Cat 1" class="image">
       <img src="../assets/dog2_main_page.jpg" alt="Dog 2" class="image">
     </div>
+
+   <div class="button-container">
+    <v-btn rounded flat color="rgba(255, 201, 116, 0.7)" text="SEE ALL PETS" class="custom-btn" @click="navigateToPets" style="color: #5BB4A9;"></v-btn>
+   </div>
+
+  <div class="image-container">
+      <img src="../assets/s1_main_page.jpg" alt="Shelter 1" class="image">
+      <img src="../assets/s2_main_page.jpg" alt="Shelter 2" class="image">
+      <img src="../assets/s3_main_page.jpg" alt="Shelter 3" class="image">
+    </div>
+
+   <div class="button-container">
+    <v-btn rounded flat color="rgba(255, 201, 116, 0.7)" text="SEE ALL SHELTERS" class="custom-btn" @click="navigateToShelters" style="color: #5BB4A9;"></v-btn>
+   </div>
 
 </template>
 
@@ -37,6 +45,9 @@ export default {
     navigateToPets() {
       // Programmatically navigate to the "/pets" route
       this.$router.push('/pets');
+    },
+    navigateToShelters() {
+      this.$router.push('/shelters');
     },
   },
 }
@@ -75,6 +86,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 5%;
+  margin-bottom: 3%;
 }
 
 .custom-btn {

@@ -63,6 +63,27 @@ function createRepository() {
         },
     ];
 
+    this.shelterList = [
+        {
+            id: 0,
+            name: "Hopeful Hearts",
+            imageUrl:"https://mda.maryland.gov/vetboard/PublishingImages/shelterpic.jpg",
+            description: "Welcome to our compassionate animal shelter, where every wag of a tail and purr of contentment matters. At our shelter, we provide a safe haven for abandoned, neglected, and surrendered animals. Our dedicated team strives to match each furry friend with their forever home, ensuring they receive love, care, and attention."
+        },
+        {
+            id: 1,
+            name: "Purr Paradise",
+            imageUrl:"https://www.spcai.org/wp-content/uploads/2022/03/gostomel4-scaled.jpeg",
+            description: "Discover a sanctuary for animals in need at our shelter, a place where compassion meets commitment. Our shelter stands as a beacon of hope for homeless pets, offering them a second chance at happiness. From playful puppies to serene seniors, we house a diverse array of animals awaiting loving families."
+        },
+        {
+            id: 2,
+            name: "Meow Mansion",
+            imageUrl:"https://images.wsj.net/im-831237?width=700&height=466",
+            description: "Step into our welcoming animal shelter, a haven where tails never stop wagging and hearts are always full. Our mission is simple: to rescue, rehabilitate, and rehome animals in need. With a dedicated team of caregivers and volunteers, we provide a nurturing environment for our furry residents."
+        }
+    ];
+
     this.adoptionRequests = [
         {
             id: 1,

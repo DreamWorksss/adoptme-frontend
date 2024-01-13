@@ -5,6 +5,12 @@ var API = new createAPI();
 function createAPI() {
     this.repo = new createRepository();
 
+    this.FetchAllShelters = () => {
+        return new Promise((resolve) => {
+            resolve(this.repo.shelterList);
+        });
+    };
+
     this.FetchAllPets = () => {
         return new Promise((resolve) => {
             resolve(this.repo.petList);
