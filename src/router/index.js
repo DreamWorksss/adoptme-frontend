@@ -10,6 +10,7 @@ import ShelterPetDetailsPage from '../views/Shelter/ShelterPetDetailsPage.vue'
 import LoginPage from '../views/LoginPage.vue'
 import AccountRegister from '../views/AccountRegisterPage.vue'
 import DonatePage from '../views/User/DonatePage.vue'
+import AdoptAtDistanceFormPage from "@/views/User/AdoptAtDistanceFormPage.vue";
 
 const routes = [
   {
@@ -61,6 +62,11 @@ const routes = [
     path: '/donate/:id',
     name: 'donate',
     component: DonatePage
+  },
+  {
+    path: '/adopt-at-distance/:id',
+    name: 'AdoptAtDistance',
+    component: AdoptAtDistanceFormPage
   }
 ]
 
