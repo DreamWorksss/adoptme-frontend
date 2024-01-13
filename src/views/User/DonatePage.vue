@@ -8,25 +8,28 @@ const route = useRoute();
 const router = useRouter();
 
 const formData = reactive({
-    petID: route.params.id,
+    shelterID: route.params.id,
     name: "",
     phoneNumber: "",
     email: "",
-    message: "",
+    sum: "",
+    paymentMethod: "",
 });
 
-const submitForm = () => {
+const submitForm  = () => {
     // API call here
+    console.log(formData);
     formStore.addAdoptionRequest({
         ...formData,
-        petID: parseInt(formData.petID),
+        shelterID: parseInt(formData.sheletrID),
     });
     router.back();
 };
 </script>
 
 <template>
-    <v-form class="styled-form">
+
+<v-form class="styled-form">
     <v-container class="styled-container">
       <v-row style="margin-bottom: 1rem">
         <v-text-field
@@ -59,11 +62,22 @@ const submitForm = () => {
 
       <v-row style="margin-bottom: 1rem">
         <v-text-field
-            id="message"
-            v-model="formData.message"
-            label="Message"
+            id="sum"
+            v-model="formData.sum"
+            label="Sum"
             bg-color="#fff"
+            append-inner-icon="mdi-currency-eur"
         ></v-text-field>
+      </v-row>
+
+      <v-row style="margin-bottom: 1rem">
+        <v-select
+            id="paymentMethod"
+            v-model="formData.paymentMethod"
+            label="Payment method"
+            bg-color="#fff"
+            :items="['cash', 'card', 'check']"
+        ></v-select>
       </v-row>
 
       <v-row style="margin-bottom: 1rem">
@@ -99,4 +113,5 @@ const submitForm = () => {
   cursor: pointer;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(65, 65, 65, 0.5);
 }
+
 </style>
