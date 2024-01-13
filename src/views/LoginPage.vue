@@ -20,7 +20,7 @@
           <v-btn rounded color="#ffc974" text="Login" class="custom-btn"></v-btn>
         </form>
         <div class="create-account">
-        <a href="#/createaccount" class="create-account">Request account➜</a>
+        <a href="#/register" class="create-account">Request account➜</a>
         </div>
       </div>
     </div>
