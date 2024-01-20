@@ -19,8 +19,12 @@ onMounted(() => {
   }
 })
 
-const redirectToForm = () => {
+const redirectToAdoptionForm = () => {
   router.push("/form/" + route.params.id);
+}
+
+const redirectToAdoptAtDistanceForm = () => {
+  router.push("/adopt-at-distance/" + route.params.id);
 }
 </script>
 
@@ -57,12 +61,13 @@ const redirectToForm = () => {
                     <v-btn
                         text="ADOPT"
                         class="adopt-button my-10 rounded-l elevation-7"
-                        @click="redirectToForm"
+                        @click="redirectToAdoptionForm"
                         style="color: #5BB4A9;"
                     ></v-btn>
                     <v-btn
                         text="ADOPT AT A DISTANCE"
                         class="adopt-button mb-10 rounded-l elevation-7"
+                        @click="redirectToAdoptAtDistanceForm"
                         style="color: #5BB4A9;"
                     ></v-btn>
                 </div>

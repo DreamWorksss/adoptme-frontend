@@ -1,32 +1,30 @@
 <script setup>
-import useFormStore from "@/Store/formStore";
-import { reactive } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import {reactive} from "vue";
+import {useRoute, useRouter} from "vue-router";
 
-const formStore = useFormStore();
 const route = useRoute();
 const router = useRouter();
 
 const formData = reactive({
-    petID: route.params.id,
-    name: "",
-    phoneNumber: "",
-    email: "",
-    message: "",
+  petID: route.params.id,
+  name: "",
+  phoneNumber: "",
+  email: "",
+  sum: "",
+  frequency: "",
+  startDate: "",
+  endDate: "",
+  paymentMethod: ""
 });
 
 const submitForm = () => {
-    // API call here
-    formStore.addAdoptionRequest({
-        ...formData,
-        petID: parseInt(formData.petID),
-    });
-    router.back();
+  // something should happen here
+  router.back();
 };
 </script>
 
 <template>
-    <v-form class="styled-form">
+  <v-form class="styled-form">
     <v-container class="styled-container">
       <v-row style="margin-bottom: 1rem">
         <v-text-field
@@ -59,11 +57,55 @@ const submitForm = () => {
 
       <v-row style="margin-bottom: 1rem">
         <v-text-field
-            id="message"
-            v-model="formData.message"
-            label="Message"
+            id="sum"
+            v-model="formData.sum"
+            label="Sum"
             bg-color="#fff"
+            append-inner-icon="mdi-currency-eur"
         ></v-text-field>
+      </v-row>
+
+      <v-row style="margin-bottom: 1rem">
+        <v-select
+            id="frequency"
+            v-model="formData.frequency"
+            label="Frequency"
+            bg-color="#fff"
+            :items="['daily', 'weekly', 'monthly']"
+        >
+        </v-select>
+      </v-row>
+
+      <v-row style="margin-bottom: 1rem">
+        <v-text-field
+            id="startDate"
+            v-model="formData.startDate"
+            label="Start date"
+            placeholder="31/12/2023"
+            bg-color="#fff"
+            append-inner-icon="mdi-calendar"
+        ></v-text-field>
+      </v-row>
+
+      <v-row style="margin-bottom: 1rem">
+        <v-text-field
+            id="endDate"
+            v-model="formData.endDate"
+            label="End date"
+            placeholder="31/12/2024"
+            bg-color="#fff"
+            append-inner-icon="mdi-calendar"
+        ></v-text-field>
+      </v-row>
+
+      <v-row style="margin-bottom: 1rem">
+        <v-select
+            id="paymentMethod"
+            v-model="formData.paymentMethod"
+            label="Payment method"
+            bg-color="#fff"
+            :items="['cash', 'card', 'check']"
+        ></v-select>
       </v-row>
 
       <v-row style="margin-bottom: 1rem">
@@ -79,9 +121,11 @@ const submitForm = () => {
 </template>
 
 <style scoped>
+
+
 .styled-form {
   background: linear-gradient(to bottom, #ffffff, #2a9d8f);
-  height: 90vh;
+  height: 200vh;
   padding-top: 5%;
 }
 
@@ -99,4 +143,5 @@ const submitForm = () => {
   cursor: pointer;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(65, 65, 65, 0.5);
 }
+
 </style>

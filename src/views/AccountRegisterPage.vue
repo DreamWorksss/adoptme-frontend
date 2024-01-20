@@ -8,31 +8,31 @@ const route = useRoute();
 const router = useRouter();
 
 const formData = reactive({
-    petID: route.params.id,
-    name: "",
+    shelterName: "",
     phoneNumber: "",
-    email: "",
-    message: "",
+    email: "", 
+    shelterPicture: "",
+    shelterDescription: "",
+    password: "",
+    confirmPassword: ""
 });
 
-const submitForm = () => {
+const submitForm  = () => {
     // API call here
-    formStore.addAdoptionRequest({
-        ...formData,
-        petID: parseInt(formData.petID),
-    });
+    console.log(formData);
     router.back();
 };
 </script>
 
 <template>
-    <v-form class="styled-form">
+
+<v-form class="styled-form">
     <v-container class="styled-container">
       <v-row style="margin-bottom: 1rem">
         <v-text-field
-            id="name"
-            v-model="formData.name"
-            label="Name"
+            id="shelterName"
+            v-model="formData.shelterName"
+            label="Shelter Name"
             bg-color="#fff"
         ></v-text-field>
       </v-row>
@@ -59,9 +59,38 @@ const submitForm = () => {
 
       <v-row style="margin-bottom: 1rem">
         <v-text-field
-            id="message"
-            v-model="formData.message"
-            label="Message"
+            id="shelterPicture"
+            v-model="formData.shelterPicture"
+            label="Shelter Picture"
+            bg-color="#fff"
+        ></v-text-field>
+      </v-row>
+
+      <v-row style="margin-bottom: 1rem">
+        <v-text-field
+            id="shelterDescription"
+            v-model="formData.shelterDescription"
+            label="Shelter Description"
+            bg-color="#fff"
+        ></v-text-field>
+      </v-row>
+
+      <v-row style="margin-bottom: 1rem">
+        <v-text-field
+            id="password"
+            v-model="formData.password"
+            label="Password"
+            type="password"
+            bg-color="#fff"
+        ></v-text-field>
+      </v-row>
+
+      <v-row style="margin-bottom: 1rem">
+        <v-text-field
+            id="confirmPassword"
+            v-model="formData.confirmPassword"
+            label="Confirm Password"
+            type="password"
             bg-color="#fff"
         ></v-text-field>
       </v-row>
@@ -71,7 +100,7 @@ const submitForm = () => {
             rounded-1
             class="button"
             @click="submitForm"
-            text="Submit"
+            text="Register"
         ></v-btn>
       </v-row>
     </v-container>
@@ -81,7 +110,7 @@ const submitForm = () => {
 <style scoped>
 .styled-form {
   background: linear-gradient(to bottom, #ffffff, #2a9d8f);
-  height: 90vh;
+  height: 120vh;
   padding-top: 5%;
 }
 
@@ -99,4 +128,5 @@ const submitForm = () => {
   cursor: pointer;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(65, 65, 65, 0.5);
 }
+
 </style>
