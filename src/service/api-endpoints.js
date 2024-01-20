@@ -16,6 +16,7 @@ const endpoints = {
         retrivePets : `${petsEndpoint}/RetrievePets`,
         retrivePet : `${petsEndpoint}/RetrievePet`,
         addPet : `${petsEndpoint}/AddPet`,
+        retrievePetsByShelter : `${petsEndpoint}/RetrievePetsByShelter`,
     },
     shelter: {
         retrieveShelters : `${shelterEndpoint}/RetrieveShelters`,

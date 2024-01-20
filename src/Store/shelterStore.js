@@ -27,19 +27,26 @@ const useShelterPetStore = defineStore("shelter", () => {
     
     shelterService.fetchPetsFromShelter()
     .then(result => {
-        console.log(result.data.result.entities);
+        shelterPets.value = [...result];
     })
     
-    API.FetchAllPetsFromShelter(SHELTER_ID).then((result) => {
+    /*API.FetchAllPetsFromShelter(SHELTER_ID).then((result) => {
         shelterPets.value = [...result];
         console.log(result);
-    });
+    });*/
 
     const refetchData = () => {
+        shelterService.fetchPetsFromShelter()
+        .then(result => {
+            shelterPets.value = [...result];
+        })
+    };
+
+    /*const refetchData = () => {
         API.FetchAllPetsFromShelter(SHELTER_ID).then((result) => {
             shelterPets.value = [...result];
         });
-    };
+    };*/
 
     const dataUpdated = () => {
         refetchData();
@@ -49,10 +56,13 @@ const useShelterPetStore = defineStore("shelter", () => {
     const getShelterPets = () => {
         return shelterPets;
     };
-
+    
     const addPet = (pet) => {
+        shelterService.addPet(pet).then(() => dataUpdated());
+    }
+    /*const addPet = (pet) => {
         API.AddPet(pet).then(() => dataUpdated());
-    };
+    };*/
 
     const deletePet = (petID) => {
         API.RemovePet(petID).then(() => dataUpdated());

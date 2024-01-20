@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import API from "./Mockup/api";
 import { ref } from "vue";
 
-const useShelterStore = defineStore("shelter", () => {
+const useShelterStore = defineStore("allShelter", () => {
     const shelterList = ref([]);
 
     API.FetchAllShelters()

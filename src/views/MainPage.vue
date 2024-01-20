@@ -16,11 +16,31 @@
     </div>
   </div>
 
-    <div class="image-container">
-      <img src="../assets/dog1_main_page.jpg" alt="Dog 1" class="image">
-      <img src="../assets/cat_main_page.jpg" alt="Cat 1" class="image">
-      <img src="../assets/dog2_main_page.jpg" alt="Dog 2" class="image">
+  <v-container fluid class="pa-0">
+    <div class="v-row">
+      <v-img
+        :aspect-ratio="16/9"
+        cover
+        src="https://www.capewayvet.com/blog/wp-content/uploads/2014/06/dog-shelter.jpg"
+      ></v-img>
+      <v-img
+        :aspect-ratio="16/9"
+        cover
+        src="https://images.theconversation.com/files/517333/original/file-20230324-20-qmnsgu.jpg?ixlib=rb-1.1.0&rect=0%2C298%2C6413%2C3206&q=45&auto=format&w=1356&h=668&fit=crop"
+      ></v-img>
+      <v-img
+        :aspect-ratio="16/9"
+        cover
+        src="https://www.cesarsway.com/wp-content/uploads/2015/11/You-to-the-rescue-Starting-your-own-shelter.jpg"
+      ></v-img>
     </div>
+  </v-container>
+
+  <div class="image-container">
+    <img src="../assets/dog1_main_page.jpg" alt="Dog 1" class="image">
+    <img src="../assets/cat_main_page.jpg" alt="Cat 1" class="image">
+    <img src="../assets/dog2_main_page.jpg" alt="Dog 2" class="image">
+  </div>
 
    <div class="button-container">
     <v-btn rounded flat color="rgba(255, 201, 116, 0.7)" text="SEE ALL PETS" class="custom-btn" @click="navigateToPets" style="color: #5BB4A9;"></v-btn>
