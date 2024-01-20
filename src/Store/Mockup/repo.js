@@ -8,7 +8,7 @@ function createRepository() {
             shelter: "Hopeful Hearts",
             shelterID: 0,
             description:
-                "“Rocky, a heartwarming Golden Retriever, found his second chance at happiness through the compassionate efforts of Paw Palace. Rescued from challenging circumstances, Rocky now radiates joy and warmth. His gentle nature and friendly demeanor make him a beloved member of our shelter. Despite his past, Rocky embraces every moment with an infectious spirit, reminding us all of the transformative power of love and care. Adopting Rocky means welcoming a loyal companion into your home, ready to fill your life with boundless love and tail-wagging joy.”",
+                "“Rocky, a heartwarming Golden Retriever, found his second chance at happiness through the compassionate efforts of Paw Palace. He is playful and friendly. Rescued from challenging circumstances, Rocky now radiates joy and warmth. His gentle nature and friendly demeanor make him a beloved member of our shelter. Despite his past, Rocky embraces every moment with an infectious spirit, reminding us all of the transformative power of love and care. Adopting Rocky means welcoming a loyal companion into your home, ready to fill your life with boundless love and tail-wagging joy.”",
             imageUrl:
                 "https://www.princeton.edu/sites/default/files/styles/1x_full_2x_half_crop/public/images/2022/02/KOA_Nassau_2697x1517.jpg?itok=Bg2K7j7J",
         },
@@ -45,7 +45,7 @@ function createRepository() {
             shelter: "Meow Mansion",
             shelterID: 4,
             description:
-                '"Oliver, a charming male cat, awaits a loving home at Meow Mansion. With his sleek fur and captivating eyes, Oliver is sure to capture your heart. Rescued from uncertain circumstances, he has blossomed into a playful and affectionate companion. Consider making Oliver a part of your family, and experience the joy of feline companionship."',
+                '"Oliver, a charming, empathetic, protective, patient male cat, awaits a loving home at Meow Mansion. With his sleek fur and captivating eyes, Oliver is sure to capture your heart. Rescued from uncertain circumstances, he has blossomed into a playful and affectionate companion. Consider making Oliver a part of your family, and experience the joy of feline companionship."',
             imageUrl:
                 "https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg",
         },
