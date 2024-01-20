@@ -6,8 +6,16 @@ class ShelterService {
         this.shelterId = 1;
     }
 
-    fetchShelterData() { 
-        axios.get(endpoints.shelter.retrieveShelter)
+    set ShelterId(newShelterId) {
+        this.shelterId = newShelterId;
+    }
+
+    async fetchShelterData() { 
+        return axios.get(`${endpoints.shelter.retrieveShelter}?id=${this.shelterId}`);
+    }
+
+    async fetchPetsFromShelter() {
+        return axios.get(`${endpoints.pets.retrivePets}?Page=0&PageSize=100`)
     }
 }
 

@@ -3,12 +3,13 @@ import { ref } from "vue";
 import useUIStateStore from "./uiStateStore";
 import API from "./Mockup/api";
 import usePetStore from "./store";
+import shelterService from "@/service/shelter-service";
 
 const SHELTER_ID = 0;
 
 const useShelterPetStore = defineStore("shelter", () => {
     const shelterPets = ref([]);
-    const shelterName = ref("Hopeful Hearts");
+    const shelterName = ref("");
 
     const selectedPet = ref(undefined);
 
@@ -17,10 +18,21 @@ const useShelterPetStore = defineStore("shelter", () => {
     const updatePetStoreCallback = petStore.updatePetStore;
 
     const uiState = useUIStateStore();
-    uiState.shelterName = shelterName.value;
-
+    uiState.shelterName = shelterName;
+    
+    shelterService.fetchShelterData()
+        .then(result => {
+            shelterName.value = result.data.name;
+        });
+    
+    shelterService.fetchPetsFromShelter()
+    .then(result => {
+        console.log(result.data.result.entities);
+    })
+    
     API.FetchAllPetsFromShelter(SHELTER_ID).then((result) => {
         shelterPets.value = [...result];
+        console.log(result);
     });
 
     const refetchData = () => {
