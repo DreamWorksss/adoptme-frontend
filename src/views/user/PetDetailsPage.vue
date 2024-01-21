@@ -25,7 +25,6 @@ const redirectToForm = () => {
 </script>
 
 <template>
-  <!-- refactor to make comp auto resize -->
     <div class="pet-details-page">
       <v-container fluid class="ma-0 pa-0 mt-3">
         <v-row>

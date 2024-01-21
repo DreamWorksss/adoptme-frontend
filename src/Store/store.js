@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import API from "./Mockup/api";
 import { ref } from "vue";
 
-//
+
 const usePetStore = defineStore("pet", () => {
     const petList = ref([]);
     const selectedPet = ref(undefined)
@@ -18,9 +18,11 @@ const usePetStore = defineStore("pet", () => {
             petList.value = [...result]
         })
     }
+
+    const fetchAllPetsPromise = () => {
+        return API.FetchAllPets();
+    }
  
-    // remove this later
-    // eslint-disable-next-line no-unused-vars
     const fetchPetDetails = (petID) => {
         // API call
         // axios.get(`/pets/${petId}`).then(response => this.selectedPet = response.data);
@@ -54,7 +56,7 @@ const usePetStore = defineStore("pet", () => {
         selectedPet.value = pet;
     }
 
-    return {petList, selectedPet, fetchSelectedPet, fetchPetDetails, setSelectedPet, updatePetStore, getAllPets};
+    return {petList, selectedPet, fetchSelectedPet, fetchPetDetails, fetchAllPetsPromise, setSelectedPet, updatePetStore, getAllPets};
 });
 
 export default usePetStore;
