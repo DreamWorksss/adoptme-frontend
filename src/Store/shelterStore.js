@@ -65,14 +65,22 @@ const useShelterPetStore = defineStore("shelter", () => {
     };*/
 
     const deletePet = (petID) => {
-        API.RemovePet(petID).then(() => dataUpdated());
+        shelterService.deletePet(petID).then(() => dataUpdated());
     };
 
+    /*const deletePet = (petID) => {
+        API.RemovePet(petID).then(() => dataUpdated());
+    };*/
+
     const updatePet = (pet) => {
+        shelterService.updatePet(pet).then(() => dataUpdated());
+    };
+
+    /*const updatePet = (pet) => {
         API.UpdatePet(pet).then(() => {
             dataUpdated();
         });
-    };
+    };*/
 
     const setSelectedPet = (pet) => {
         selectedPet.value = pet;
@@ -82,16 +90,23 @@ const useShelterPetStore = defineStore("shelter", () => {
     };
 
     const fetchSelectedPet = (petId) => {
+        shelterService.getPet(petId).then(result => {
+            selectedPet.value = result;
+        });
+    };
+
+    /*
+    const fetchSelectedPet = (petId) => {
         API.FetchPet(petId).then((result) => {
             selectedPet.value = result;
             API.FetchRequestForPet(petId).then((result) => {
                 selectedPet.value["adoptionRequests"] = result;
             });
         });
-    };
+    };*/
 
     const deleteAdoptionRequest = (requestId) => {
-        API.DeleteRequest(requestId).then(() => {
+        shelterService.deleteAdoptionRequest(requestId).then(() => {
             for (
                 let index = 0;
                 index < selectedPet.value.adoptionRequests.length;
@@ -104,7 +119,33 @@ const useShelterPetStore = defineStore("shelter", () => {
                 }
             }
         });
+        /*API.DeleteRequest(requestId).then(() => {
+            for (
+                let index = 0;
+                index < selectedPet.value.adoptionRequests.length;
+                index++
+            ) {
+                const request = selectedPet.value.adoptionRequests[index];
+                if (request.id === requestId) {
+                    console.log(selectedPet)
+                    selectedPet.value.adoptionRequests.splice(index, 1);
+                }
+            }
+        });*/
     };
+
+    const acceptAdoptionRequest = (id) => {
+        for (
+            let index = 0;
+            index < selectedPet.value.adoptionRequests.length;
+            index++
+        ) {
+            const request = selectedPet.value.adoptionRequests[index];
+            if (request.id === id) {
+                selectedPet.value.adoptionRequests.splice(index, 1);
+            }
+        }
+    }
 
     return {
         shelterPets,

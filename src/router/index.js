@@ -11,6 +11,7 @@ import LoginPage from '../views/LoginPage.vue'
 import AccountRegister from '../views/AccountRegisterPage.vue'
 import DonatePage from '../views/User/DonatePage.vue'
 import AdoptAtDistanceFormPage from "@/views/User/AdoptAtDistanceFormPage.vue";
+import AccountRequestsPage from '../views/Admin/AccountRequestsPage.vue'
 
 const routes = [
   {
@@ -67,6 +68,11 @@ const routes = [
     path: '/adopt-at-distance/:id',
     name: 'AdoptAtDistance',
     component: AdoptAtDistanceFormPage
+  },
+  {
+    path: '/admin/account-requests',
+    name: 'AccountRequests',
+    component: AccountRequestsPage
   }
 ]
 

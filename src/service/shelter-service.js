@@ -4,7 +4,7 @@ import {fromPetDtoToPet, fromPetToDTO} from "./helpers/pet-helpers";
 
 class ShelterService {
     constructor() {
-        this.shelterId = 1;
+        this.shelterId = 0;
     }
 
     set ShelterId(newShelterId) {
@@ -31,10 +31,45 @@ class ShelterService {
             });
     }
 
-    async addPet(pet){
+    async addPet(pet) {
         let petDTO = fromPetToDTO(pet);
-        console.log(petDTO);
+        petDTO["shelterId"] = this.shelterId;
         return axios.post(`${endpoints.pets.addPet}`, {...petDTO});
+    }
+    
+    async deletePet(petID) {
+        return axios.delete(`${endpoints.pets.deletePet}?id=${petID}`);
+    }
+
+    async updatePet(pet) {
+        const petDto = fromPetToDTO(pet);
+        delete petDto["id"];
+        console.log(petDto);
+        return axios.put(`${endpoints.pets.updatePet}/${pet.id}`, petDto);
+    }
+
+    async getPet(petID) {
+        return axios.get(`${endpoints.pets.retrievePetWithRequests}?id=${petID}`).then(result => fromPetDtoToPet(result.data.result));
+    }
+
+    async deleteAdoptionRequest(id) {
+        return axios.delete(`${endpoints.adoptionRequest.deleteAdoptionRequest}?id=${id}`);
+    }
+
+    async fetchAllShelters() {
+        return axios.get(`${endpoints.shelter.retrieveAllShelters}`).then(result => 
+            {
+                console.log(result);
+                const pets = [];
+                if (result.status == "200") {
+                    var entitites = result.data.result.entities
+                    entitites.forEach(petDTO => {
+                        const pet = fromPetDtoToPet(petDTO);
+                        pets.push(pet);
+                    });
+                }
+                return pets;
+            });
     }
 }
 

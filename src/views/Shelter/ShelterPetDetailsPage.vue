@@ -12,14 +12,15 @@ const petDetails = computed(() => {
 });
 
 onMounted(() => {
-    if (petDetails.value === undefined) {
-        store.fetchSelectedPet(route.params.id);
-    }
+    store.fetchSelectedPet(route.params.id);
 });
 
 const decline = (id) => {
     store.deleteAdoptionRequest(id);
 };
+
+const accept = (id) => {
+}
 </script>
 
 <template>
@@ -88,6 +89,7 @@ const decline = (id) => {
                             'border-radius': '10px',
                             background: 'white',
                         }"
+                        @click="accept(request.id)"
                         >ACCEPT</v-btn
                     >
                     <v-btn

@@ -45,9 +45,16 @@ const updatePet = async (isActive) => {
     let baseImg = "";
 
     try {
+        console.log(1);
         baseImg = await encodeImageFileAsURL(pet.file.value[0]);
     } catch {
+        console.log(2);
         baseImg = pet.defaultImage.value;
+    }
+
+    if (baseImg == undefined)
+    {
+        baseImg = "";
     }
 
     let petObj = {
@@ -58,8 +65,11 @@ const updatePet = async (isActive) => {
         color: pet.color.value,
         description: pet.description.value,
         imageUrl: baseImg,
+        shelterId: pet.shelterId.value,
+        adoptionRequests: [...pet.adoptionRequests.value]
     };
     
+    console.log(petObj);
     isActive.value = false;
     shetlerStore.updatePet(petObj);
     clearFields();

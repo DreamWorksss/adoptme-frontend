@@ -15,7 +15,9 @@ const useShelterUIStore = defineStore("ui-shelter", () => {
         color: shallowRef(""),
         description: shallowRef(""),
         previewImage: ref(""),
-        defaultImage: ref("")
+        defaultImage: ref(""),
+        shelterId : ref(0),
+        adoptionRequests: ref([])
     };
 
     const setPetToUpdate = (pet) => {
@@ -28,6 +30,8 @@ const useShelterUIStore = defineStore("ui-shelter", () => {
         petToUpdate.file.value = [];
         petToUpdate.previewImage.value = pet.imageUrl;
         petToUpdate.defaultImage.value = pet.imageUrl;
+        petToUpdate.shelterId.value = pet.shelterId;
+        petToUpdate.adoptionRequests.value = pet.adoptionRequests;
     };
 
     const clearPetFields = () => {
@@ -39,6 +43,8 @@ const useShelterUIStore = defineStore("ui-shelter", () => {
         petToUpdate.file.value = [];
         petToUpdate.previewImage.value = DEFAULT_IMAGE;
         petToUpdate.defaultImage.value = DEFAULT_IMAGE;
+        petToUpdate.shelterId.value = 0;
+        petToUpdate.adoptionRequests.value = [];
     }
 
     const getPetToUpdate = () => {

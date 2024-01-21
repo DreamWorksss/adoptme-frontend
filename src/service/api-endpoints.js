@@ -2,8 +2,13 @@ const baseApiEndpoint = "http://localhost:5038/api";
 const petsEndpoint = `${baseApiEndpoint}/Pets`;
 const donationEndpoint = `${baseApiEndpoint}/Donation`
 const shelterEndpoint = `${baseApiEndpoint}/Shelter`
+const adoptionRequest = `${baseApiEndpoint}/AdoptionRequest`
 
 const endpoints = {
+    adoptionRequest: {
+        addAdoptionRequest:`${adoptionRequest}/AddAdoptionRequest`,
+        deleteAdoptionRequest:`${adoptionRequest}/DeleteAdoptionRequest`,
+    },
     donation:{
         retrieveDonations : `${donationEndpoint}/RetrieveDonations`,
         retrieveAllDonations : `${donationEndpoint}/RetrieveAllDonations`,
@@ -15,7 +20,10 @@ const endpoints = {
     pets : {
         retrivePets : `${petsEndpoint}/RetrievePets`,
         retrivePet : `${petsEndpoint}/RetrievePet`,
+        retrievePetWithRequests : `${petsEndpoint}/RetrievePetWithRequests`,
         addPet : `${petsEndpoint}/AddPet`,
+        deletePet : `${petsEndpoint}/DeletePet`,
+        updatePet : `${petsEndpoint}/UpdatePet`,
         retrievePetsByShelter : `${petsEndpoint}/RetrievePetsByShelter`,
     },
     shelter: {

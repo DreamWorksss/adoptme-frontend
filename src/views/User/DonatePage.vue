@@ -19,10 +19,6 @@ const formData = reactive({
 const submitForm  = () => {
     // API call here
     console.log(formData);
-    formStore.addAdoptionRequest({
-        ...formData,
-        shelterID: parseInt(formData.sheletrID),
-    });
     router.back();
 };
 </script>
